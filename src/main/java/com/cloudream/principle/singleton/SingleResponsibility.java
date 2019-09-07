@@ -1,4 +1,4 @@
-package com.cloudream.principle.single;
+package com.cloudream.principle.singleton;
 
 /**
  * @Author: wxc
