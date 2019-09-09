@@ -11,14 +11,17 @@ import java.io.InputStreamReader;
  * @description:
  */
 public class OrderPizza {
+    private final String GREEK = "greek";
+    private final String CHEESE = "cheese";
+
     public OrderPizza() {
         AbstractPizza pizza = null;
         String orderType;
         do {
             orderType = this.getPizzaType();
-            if (orderType == "greek") {
+            if (GREEK.equals(orderType)) {
                 pizza = new GreekPizza();
-            } else if (orderType == "cheese") {
+            } else if (CHEESE.equals(orderType)) {
                 pizza = new CheesePizza();
             } else {
                 break;
@@ -30,8 +33,7 @@ public class OrderPizza {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("please input pizza type:");
         try {
-            String s = br.readLine();
-            return s;
+            return br.readLine();
         } catch (IOException e) {
             e.printStackTrace();
             return "";
